@@ -1,0 +1,19 @@
+[package]
+name = "pesto"
+version = "0.1.0"
+edition = "2021"
+
+[dependencies]
+macroquad = "0.4.4"
+mlua = { version = "0.9.1", features = ["luajit", "vendored"] }
+regex = "1.10.2"
+walkdir = "2.4.0"
+
+[build-dependencies]
+winres = "0.1"
+
+[profile.release]
+strip = true
+lto = true
+codegen-units = 1
+# use upx for more compression
